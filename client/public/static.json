@@ -1,8 +1,15 @@
 {
-  "routes": [
-    {
-      "src": ".*",
-      "dest": "/index.html"
+  "root": "./dist",
+  "routes": {
+    "/**": "index.html"
+  },
+  "clean_urls": true,
+  "https_only": true,
+  "headers": {
+    "/**": {
+      "Strict-Transport-Security": "max-age=31557600",
+      "Cache-Control": "no-cache",
+      "Access-Control-Allow-Origin": "*"
     }
-  ]
+  }
 }

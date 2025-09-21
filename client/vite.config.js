@@ -15,7 +15,4 @@ export default defineConfig({
     },
   },
   base: "/",
-   preview: {
-    port: 5173
-  }
 });
