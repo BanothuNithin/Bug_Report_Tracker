@@ -21,6 +21,9 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/bugs", bugRoutes);
+app.get("/", (req, res) => {
+  res.send("Bug Report Tracker Backend is running!");
+});
 
 const PORT = process.env.PORT || 6000;
 
