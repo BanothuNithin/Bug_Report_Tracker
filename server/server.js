@@ -8,15 +8,18 @@ import bugRoutes from "./routes/bugRoutes.js";
 dotenv.config();
 const app = express();
 
+import cors from "cors";
+
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? "https://bug-tracker-frontend.onrender.com"
-        : "http://localhost:5173",
+    origin: [
+      "https://bug-report-tracker-frontend.onrender.com", // deployed frontend
+      "http://localhost:5173", // local frontend for testing
+    ],
     credentials: true,
   })
 );
+
 app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
