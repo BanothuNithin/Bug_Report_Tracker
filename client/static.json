@@ -1,14 +1,3 @@
 {
-  "root": "./dist",
-  "clean_urls": true,
-  "routes": {
-    "/**": "index.html"
-  },
-  "https_only": true,
-  "headers": {
-    "/**": {
-      "Strict-Transport-Security": "max-age=31557600",
-      "Cache-Control": "no-cache"
-    }
-  }
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
