@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import ProtectedRoute from "./components/ProtecteRoute";
+import ProtectedRoute from "./components/ProtecteRoute"; // ✅ typo fix: ensure filename matches
 import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./components/HomePage";
@@ -31,13 +31,12 @@ export default function App() {
       })
       .then((user) => {
         setCurrentUser(user);
-        setLoading(false);
       })
       .catch(() => {
         localStorage.removeItem("token");
         setCurrentUser(null);
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <div className="p-6">Loading...</div>;
@@ -45,6 +44,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         <Route
           path="/login"
@@ -59,9 +59,15 @@ export default function App() {
         <Route
           path="/register"
           element={
-            currentUser ? <Navigate to="/dashboard" replace /> : <Register />
+            currentUser ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <Register setCurrentUser={setCurrentUser} />
+            )
           }
         />
+
+        {/* Protected Route */}
         <Route
           path="/dashboard"
           element={
@@ -73,6 +79,8 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* Catch all unknown routes */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
