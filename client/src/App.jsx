@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import ProtectedRoute from "./components/ProtecteRoute"; // ✅ check filename spelling
+import ProtectedRoute from "./components/ProtecteRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./components/HomePage";
