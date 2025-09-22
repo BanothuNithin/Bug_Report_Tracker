@@ -61,7 +61,7 @@ This application allows users to report bugs, track their status, and manage the
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/bug-reporting.git
+git clone https://github.com/BanothuNithin/bug-reporting.git
 cd bug-reporting
 ```
 
@@ -171,7 +171,4 @@ During the development of this Bug Reporting & Tracking System, AI tools such as
 - **Deployment Process:** Gained experience in environment setup, server-client integration, and deployment on free hosting platforms like Vercel and Render.
 
 > **Note:** While AI tools assisted in code suggestions and troubleshooting, all final code was written, reviewed, and customized manually to fit the project's specific requirements. The AI was used as a **guide and productivity enhancer**, not a substitute for development.
-<img width="1861" height="960" alt="Screenshot (113)" src="https://github.com/user-attachments/assets/77f43e6b-edeb-4d71-b183-eb21fb88d5fd" />
-
-## License
-This project is open source and available under the [MIT License](LICENSE).
+<img width="1861" height="960" alt="Screenshot (113)" src="https://github.com/user-attachments/assets/151a87a8-7124-4a38-a535-9df6c538b3b6" />
